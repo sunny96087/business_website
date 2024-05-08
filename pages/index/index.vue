@@ -17,7 +17,7 @@ import { showToast, openDialog, showLoading, hideLoading } from '~/store/eventBu
         <div class="decorate-6 absolute"></div>
       </div>
 
-      <div class="flex flex-col items-center justify-center pl-6 lg:items-start">
+      <div class="flex flex-col items-center justify-center px-5 lg:pl-6 lg:pr-0 lg:items-start">
         <h2 class="mb-6 text-[32px] text-[#3B3B3B] lg:text-[40px]">Hi！我是 2fish</h2>
         <p class="mb-4 text-[20px] leading-[32px] text-[#5B5B5B]">
           具有 1 年經驗的前端工程師 & UIUX 設計師，技術雙修並行，熱衷於優化使用者的網頁體驗
