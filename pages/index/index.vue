@@ -168,7 +168,7 @@ import { showToast, openDialog, showLoading, hideLoading } from '~/store/eventBu
         class="pb-10 pt-20 lg:pb-[80px] lg:pt-[120px]"
       ></title-component>
 
-      <div class="flex flex-col gap-6 lg:flex-row">
+      <div class="flex flex-col gap-6 lg:flex-row lg:justify-center">
         <div class="service-item">
           <Icon name="material-symbols-light:design-services-outline-rounded" size="80"></Icon>
           <div class="text-nowrap">平面設計</div>
@@ -200,6 +200,7 @@ import { showToast, openDialog, showLoading, hideLoading } from '~/store/eventBu
     <!-- * blog -->
     <section class="py-20 lg:py-[120px]">
       <title-component title="精選文章" class="mb-10 lg:mb-20"></title-component>
+      <!-- swiper 後補 -->
     </section>
   </div>
 </template>
