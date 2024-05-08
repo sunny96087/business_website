@@ -1,8 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
 
+/* icon 
+  https://icones.js.org/collection/mdi?s=phone&icon=mdi:phone
+*/
+
 body {
-  font-family: 'Azeret Mono', monospace;
+  font-family: 'Noto Sans', monospace;
 }
 
 .paytone-one-regular {
@@ -17,6 +21,12 @@ body {
   /* vertical-align: top; */
   object-fit: cover;
 }
+
+.hover-opacity-80 {
+  @apply  hover:opacity-80 transform duration-200;
+}
+
+/* todo 分隔線 */
 
 .custom-select {
   @apply max-h-[52px] bg-white;

@@ -7,7 +7,7 @@ definePageMeta({
 
 <template>
   <main class="relative min-h-screen w-full">
-    <admin-navbar />
+    <!-- <admin-navbar /> -->
     <div class="page-wrapper">
       <div class="grow">
         <!-- <NuxtPage class="custom-b-shadow mt-4 rounded-lg border-2 border-black bg-white"/> -->

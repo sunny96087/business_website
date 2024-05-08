@@ -4,13 +4,13 @@ const store = APIStore()
 </script>
 
 <template>
-  <main class="relative min-h-screen w-full">
+  <main class="relative min-h-screen w-full flex flex-col">
     <navbar />
-    <div class="page-wrapper">
-      <div class="grow">
-        <NuxtPage />
-      </div>
+    <div class="grow">
+      <NuxtPage />
     </div>
+    <!-- <div class="page-wrapper">
+    </div> -->
     <Footer />
   </main>
 </template>
@@ -19,17 +19,17 @@ main {
   background: #FFFFFF;
   /* background-size: cover; */
   /* background-attachment: fixed; */
-  font-family: 'Azeret Mono';
+  font-family: 'Noto Sans';
 }
 
 .page-wrapper {
-  max-width: 1200px;
+  /* max-width: 1200px; */
   width: 100%;
   margin: 0 auto;
   display: flex;
-  gap: 28px;
-  padding: 40px 24px;
-  padding-bottom: 60px;
+  /* gap: 28px; */
+  /* padding: 40px 24px; */
+  /* padding-bottom: 60px; */
   align-items: start;
 }
 </style>

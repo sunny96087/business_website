@@ -1,4 +1,4 @@
-<!-- 全體動態牆 -->
+<!-- portfolio -->
 <script setup lang="ts">
 
 import { showToast, openDialog, showLoading, hideLoading } from '~/store/eventBus'
