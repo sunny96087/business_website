@@ -248,7 +248,7 @@ import { showToast, openDialog, showLoading, hideLoading } from '~/store/eventBu
       class="pb-10 pt-20 lg:pb-[80px] lg:pt-[120px]"
     ></title-component>
 
-    <div class="px-6  flex flex-col lg:max-w-[90%] lg:ml-auto  lg:overflow-x-scroll gap-6 lg:flex-row ">
+    <div class="px-6  flex flex-col lg:max-w-[90%] lg:ml-auto  lg:overflow-x-scroll gap-6 lg:flex-row qa-block">
       <div class="qa-item">
         <p class="text-[20px] text-[#3B3B3B] lg:text-[24px]">時程很趕的話可以加快作業嗎？</p>
         <p class="text-[#5B5B5B] lg:text-[20px]">
@@ -288,7 +288,7 @@ import { showToast, openDialog, showLoading, hideLoading } from '~/store/eventBu
 }
 
 .item {
-  @apply flex w-full flex-col items-center gap-2 rounded border border-[#919191] bg-[#3B3B3B] p-6 pb-12 text-[20px] text-white md:flex-row md:gap-8 md:px-8 md:py-6 xl:grow;
+  @apply flex w-full flex-col items-center gap-2 rounded border border-[#919191] bg-[#3B3B3B] p-6 pb-12 text-[20px] text-white md:flex-row md:gap-8 md:px-8 md:py-6 xl:grow md:max-w-[600px];
 }
 
 .price-item {
@@ -318,5 +318,9 @@ import { showToast, openDialog, showLoading, hideLoading } from '~/store/eventBu
 
 .qa-item {
   @apply flex flex-col items-start gap-4 rounded-lg border border-[#E9E9E9] p-6 w-full lg:min-w-[478px];
+}
+
+.qa-block::-webkit-scrollbar {
+  display: none;
 }
 </style>

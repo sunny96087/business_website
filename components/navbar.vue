@@ -14,7 +14,7 @@ const toggleMenu = () => {
 </script>
 
 <template>
-  <div class="sticky top-0 z-20 border-b border-gray-200 bg-white py-5">
+  <div class="nav-bg sticky top-0 z-20 border-b border-gray-200 py-5">
     <div class="relative m-auto flex max-w-[1200px] items-center justify-between px-6">
       <nuxtLink to="/" class="paytone-one-regular text-[26px]">2Fish</nuxtLink>
 
@@ -54,6 +54,11 @@ const toggleMenu = () => {
 </template>
 
 <style scoped>
+.nav-bg{
+  background-color: #ffffffac;
+  backdrop-filter: blur(5px);
+}
+
 .hamburger {
   width: 30px;
   height: 20px;
