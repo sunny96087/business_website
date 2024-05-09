@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     'nuxt-icon',
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
   ],
   sitemap: {
     // 您的網站根 URL

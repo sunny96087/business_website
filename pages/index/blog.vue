@@ -72,16 +72,32 @@ const blogs = ref([
   }
 ])
 
+// 目前選擇分類
 const selectedCategory = ref('')
+// 目前頁面
+const isMainPage = ref(true)
+// 目前閱讀文章
+const currentArticleId = ref<number | null>(null)
 
 const filteredBlogs = computed(() => {
   if (!selectedCategory.value) return blogs.value
   return blogs.value.filter((blog) => blog.category === selectedCategory.value)
 })
+
+function handleArticleClick(id) {
+  currentArticleId.value = id
+  isMainPage.value = false
+}
+
+// 定義方法
+function selectCategory(category) {
+ selectedCategory.value = category
+ isMainPage.value = true
+}
 </script>
 
 <template>
-  <section class="pb-[40px] lg:pb-[80px]">
+  <section class="pb-[40px] lg:pb-[80px]" v-if="isMainPage">
     <title-component title="部落格" class="pt-20 lg:pt-[120px]"></title-component>
     <p class="mt-4 text-center text-[#919191] lg:mt-6">不定期分享技術文章</p>
   </section>
@@ -89,51 +105,53 @@ const filteredBlogs = computed(() => {
   <section class="flex flex-col lg:mx-auto lg:max-w-[1200px] lg:flex-row lg:gap-6">
     <!-- * mb - bar -->
     <div
-      class="sticky left-0 right-0 top-0 overflow-x-auto bg-[#FAFAFA] px-3 py-5 text-[#5B5B5B] lg:hidden"
+      class="sticky left-0 right-0 top-[80px] overflow-x-auto bg-[#FAFAFA] px-3 py-5 text-[#5B5B5B] lg:hidden"
     >
       <div class="flex gap-8 px-3 sm:justify-center">
         <button
           class="mb-type-btn shrink-0"
-          @click="selectedCategory = ''"
+          @click="selectCategory('')"
           :class="selectedCategory === '' ? 'mb-type-btn-focus' : ''"
         >
           全部文章
         </button>
         <button
           class="mb-type-btn shrink-0"
-          @click="selectedCategory = '前端開發'"
+          @click="selectCategory('前端開發')"
           :class="selectedCategory === '前端開發' ? 'mb-type-btn-focus' : ''"
         >
           前端開發
         </button>
         <button
           class="mb-type-btn shrink-0"
-          @click="selectedCategory = 'UI/UX 新知'"
+          @click="selectCategory('UI/UX 新知')"
           :class="selectedCategory === 'UI/UX 新知' ? 'mb-type-btn-focus' : ''"
         >
           UI/UX 新知
         </button>
         <button
           class="mb-type-btn shrink-0"
-          @click="selectedCategory = '數位產品設計'"
+          @click="selectCategory('數位產品設計')"
           :class="selectedCategory === '數位產品設計' ? 'mb-type-btn-focus' : ''"
         >
           數位產品設計
         </button>
         <button
           class="mb-type-btn shrink-0"
-          @click="selectedCategory = '平面設計'"
+          @click="selectCategory('平面設計')"
           :class="selectedCategory === '平面設計' ? 'mb-type-btn-focus' : ''"
         >
           平面設計
         </button>
       </div>
     </div>
-    <!-- * article -->
-    <div class="flex grow flex-col gap-10 px-8 py-10">
+
+    <!-- * Main article -->
+    <div v-if="isMainPage" class="flex grow flex-col gap-10 px-8 py-10">
       <div
         v-for="blog in filteredBlogs"
         :key="blog.id"
+        @click="handleArticleClick(blog.id)"
         class="flex flex-col gap-4 text-[#3B3B3B] lg:flex-row"
       >
         <div
@@ -151,41 +169,58 @@ const filteredBlogs = computed(() => {
         </div>
       </div>
     </div>
+    <!-- * 內頁 -->
+    <div v-else class="grow px-3 py-8">
+      <div v-for="blog in filteredBlogs" :key="blog.id">
+        <div v-if="currentArticleId === blog.id">
+          <!-- 顯示對應文章的內容 -->
+          <h2>{{ blog.title }}</h2>
+          <p>{{ blog.description }}</p>
+          <!-- 其他文章內容 -->
+          
+          <!-- * 特別內容 -->
+          <div v-if="currentArticleId === 1 " class="">spppppp</div>
+          
+          <!-- 上一頁 -->
+          <button @click="isMainPage = true">返回主頁面</button>
+        </div>
+      </div>
+    </div>
 
     <!-- * type -->
     <div class="relative hidden min-w-[306px] bg-[#FAFAFA] p-20 lg:block">
       <div class="sticky top-[100px] flex flex-col items-start gap-8 text-[20px]">
         <button
-          class="pc-type-btn "
-          @click="selectedCategory = ''"
+          class="pc-type-btn"
+          @click="selectCategory('')"
           :class="selectedCategory === '' ? 'pc-type-btn-focus' : ''"
         >
           全部文章
         </button>
         <button
-          class="pc-type-btn "
-          @click="selectedCategory = '前端開發'"
+          class="pc-type-btn"
+          @click="selectCategory('前端開發')"
           :class="selectedCategory === '前端開發' ? 'pc-type-btn-focus' : ''"
         >
           前端開發
         </button>
         <button
-          class="pc-type-btn "
-          @click="selectedCategory = 'UI/UX 新知'"
+          class="pc-type-btn"
+          @click="selectCategory('UI/UX 新知')"
           :class="selectedCategory === 'UI/UX 新知' ? 'pc-type-btn-focus' : ''"
         >
           UI/UX 新知
         </button>
         <button
-          class="pc-type-btn "
-          @click="selectedCategory = '數位產品設計'"
+          class="pc-type-btn"
+          @click="selectCategory('數位產品設計')"
           :class="selectedCategory === '數位產品設計' ? 'pc-type-btn-focus' : ''"
         >
           數位產品設計
         </button>
         <button
-          class="pc-type-btn "
-          @click="selectedCategory = '平面設計'"
+          class="pc-type-btn"
+          @click="selectCategory('平面設計')"
           :class="selectedCategory === '平面設計' ? 'pc-type-btn-focus' : ''"
         >
           平面設計
@@ -201,7 +236,7 @@ const filteredBlogs = computed(() => {
 }
 
 .pc-type-btn {
-  @apply border-b-2 border-transparent p-1 shrink-0 transform duration-200;
+  @apply shrink-0 transform border-b-2 border-transparent p-1 duration-200;
 }
 .pc-type-btn:hover {
   @apply border-[#1E1E1E]  text-[#1E1E1E];

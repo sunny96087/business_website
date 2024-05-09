@@ -1,6 +1,6 @@
 <!-- portfolio -->
 <script setup lang="ts">
-import { showToast, openDialog, showLoading, hideLoading } from '~/store/eventBus'
+
 </script>
 
 <template>
@@ -16,8 +16,10 @@ import { showToast, openDialog, showLoading, hideLoading } from '~/store/eventBu
       </div>
     </div>
 
-    <div class="mt-10 flex flex-col items-center gap-5 px-8 md:flex-row md:justify-center md:gap-10 md:max-w-[640px] md:mx-auto">
-      <div class=" flex flex-col items-center">
+    <div
+      class="mt-10 flex flex-col items-center gap-5 px-8 md:mx-auto md:max-w-[640px] md:flex-row md:justify-center md:gap-10"
+    >
+      <div class="flex flex-col items-center">
         <p class="text-[#5B5B5B]">2B經驗</p>
         <div class="mt-[2px] h-[2px] w-6 bg-[#C1C1C1]"></div>
         <p class="mt-2 text-center text-[#3B3B3B]">
@@ -25,8 +27,8 @@ import { showToast, openDialog, showLoading, hideLoading } from '~/store/eventBu
         </p>
       </div>
 
-      <div class=" flex flex-col items-center">
-        <p class=" text-[#5B5B5B]">2C經驗</p>
+      <div class="flex flex-col items-center">
+        <p class="text-[#5B5B5B]">2C經驗</p>
         <div class="mt-[2px] h-[2px] w-6 bg-[#C1C1C1]"></div>
         <p class="mt-2 text-center text-[#3B3B3B]">
           跨國美妝保養電商、個人品牌網站、醫美網站、電子商務
@@ -35,11 +37,14 @@ import { showToast, openDialog, showLoading, hideLoading } from '~/store/eventBu
     </div>
   </section>
 
-  
   <!-- 作品換頁 - mb -->
   <section class="bg-white py-[80px] lg:hidden"></section>
 
   <!-- 作品輪播圖 - pc -->
-  <section class="bg-white py-[120px] hidden lg:block"></section>
+  <section class="hidden bg-white py-[120px] lg:block">
+
+  </section>
 </template>
-<style scoped></style>
+<style scoped>
+
+</style>
