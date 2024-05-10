@@ -15,7 +15,7 @@ const toggleMenu = () => {
 
 <template>
   <div class="nav-bg sticky top-0 z-20 border-b border-gray-200 py-5">
-    <div class="relative m-auto flex max-w-[1200px] items-center justify-between px-6">
+    <div class=" m-auto flex max-w-[1200px] items-center justify-between px-6">
       <nuxtLink to="/" class="paytone-one-regular text-[26px]">2Fish</nuxtLink>
 
       <div class="items-center justify-center gap-10 hidden lg:flex">
@@ -28,7 +28,7 @@ const toggleMenu = () => {
       <div></div>
       <!-- mb menu -->
       <button @click="toggleMenu" class="z-20 lg:hidden">
-        <div class="hamburger" :class="{ open: menuOpen }">
+        <div class="hamburger" >
           <div></div>
           <div></div>
           <div></div>
@@ -37,10 +37,10 @@ const toggleMenu = () => {
     </div>
 
     <transition name="slide">
-      <div v-show="menuOpen" class="fixed inset-0 top-[80px] z-10 bg-black bg-opacity-50">
+      <div v-show="menuOpen" class="fixed inset-0 top-[80px] h-screen z-10 bg-black bg-opacity-20">
         <div
           class="menu absolute left-0 top-0 flex w-full flex-col items-center bg-white py-6 shadow-lg"
-          :class="{ open: menuOpen }"
+          
         >
           <nuxtLink to="/" class="nav-item-mb" exact-active-class="bg-slate-100">首頁</nuxtLink>
           <nuxtLink to="/portfolio" class="nav-item-mb" exact-active-class="bg-slate-100">作品集</nuxtLink>
