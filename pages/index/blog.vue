@@ -91,8 +91,8 @@ function handleArticleClick(id) {
 
 // 定義方法
 function selectCategory(category) {
- selectedCategory.value = category
- isMainPage.value = true
+  selectedCategory.value = category
+  isMainPage.value = true
 }
 </script>
 
@@ -170,19 +170,66 @@ function selectCategory(category) {
       </div>
     </div>
     <!-- * 內頁 -->
-    <div v-else class="grow px-3 py-8">
+    <div v-else class="grow px-4 lg:pr-10 lg:pl-8 py-8">
       <div v-for="blog in filteredBlogs" :key="blog.id">
         <div v-if="currentArticleId === blog.id">
           <!-- 顯示對應文章的內容 -->
-          <h2>{{ blog.title }}</h2>
-          <p>{{ blog.description }}</p>
+          <div class="flex items-center justify-between text-[#919191] md:justify-start md:gap-2">
+            <p>{{ blog.category }}</p>
+            <span class="hidden md:block">/</span>
+            <p>{{ blog.date }}</p>
+          </div>
+          <h2 class="mt-4 text-center text-[24px] text-[#3B3B3B] lg:mt-10 lg:text-[32px] lg:text-left">
+            {{ blog.title }}
+          </h2>
+          <p class="mt-4 text-[#3B3B3B] lg:mt-6 lg:text-[24px]">{{ blog.description }}</p>
           <!-- 其他文章內容 -->
-          
+
           <!-- * 特別內容 -->
-          <div v-if="currentArticleId === 1 " class="">spppppp</div>
-          
-          <!-- 上一頁 -->
-          <button @click="isMainPage = true">返回主頁面</button>
+          <!-- <div v-if="currentArticleId === 1 " class="">spppppp</div> -->
+        </div>
+      </div>
+      <!-- 內文資料不夠多, 先都顯示一樣的資料 -->
+      <div class="mb-10 mt-6 flex flex-col gap-8 text-[20px] text-[#3B3B3B] lg:mb-20 lg:mt-[64px] lg:gap-10">
+        <p>
+          在當今數位科技的快速發展下，虛擬實境（VR）技術日益受到關注。VR技術為使用者提供了身臨其境的體驗，並在多個領域中得到應用，如遊戲、教育、醫療等。然而，要實現真正的沈浸感需要考慮多個因素，其中介面設計是至關重要的一環。本研究旨在探討不同介面設計對使用者在虛擬環境中的沈浸感的影響，以期為優化VR技術的使用者體驗提供參考。
+        </p>
+        <div>
+          <p class="mb-4 text-[24px]">大眾看法</p>
+          <p>
+            虛擬實境技術近年來受到越來越多人的關注和接受。人們對VR技術的潛力持樂觀態度，認為它能夠提供全新的體驗和娛樂方式，並在教育、訓練等領域中有著廣泛的應用前景。然而，也有一些人擔心虛擬實境技術的成熟度和可靠性，對其潛在風險抱有顧慮。
+          </p>
+        </div>
+        <div>
+          <p class="mb-4 text-[24px]">現行產品</p>
+          <p>
+            目前市面上有許多虛擬實境產品，如Vision Pro、Oculus Rift、HTC Vive、PlayStation
+            VR等。這些產品在硬件性能、軟件支持和使用者體驗等方面存在差異，而介面設計是影響使用者體驗的重要因素之一。不同的介面設計可以影響使用者的操作方式、感知真實度以及沈浸感。
+          </p>
+        </div>
+        <div>
+          <p class="mb-4 text-[24px]">技術創新</p>
+          <p>
+            隨著硬件技術的不斷進步，VR設備的性能和功能也在不斷提升。高解析度的顯示器、感應器、追蹤技術等創新技術的應用，使得虛擬實境的感知和互動性能夠更加真實和流暢。然而，技術創新也帶來了一些挑戰，例如圖像質量、感知延遲等問題仍然存在，需要進一步解決。<br />
+            技術瓶頸：儘管虛擬實境技術取得了巨大進步，但仍然存在一些技術瓶頸需要克服。例如，許多使用者報告在使用VR設備時出現眩暈和不適感，這與感知延遲和畫面模糊等問題有關。此外，虛擬實境的內容和應用也需要更多的創新和豐富，以滿足不同使用者的需求。
+          </p>
+        </div>
+        <div>
+          <p class="mb-4 text-[24px]">技術瓶頸</p>
+          <p>
+            儘管虛擬實境技術取得了巨大進步，但仍然存在一些技術瓶頸需要克服。例如，許多使用者報告在使用VR設備時出現眩暈和不適感，這與感知延遲和畫面模糊等問題有關。此外，虛擬實境的內容和應用也需要更多的創新和豐富，以滿足不同使用者的需求。
+          </p>
+        </div>
+        <div>
+          <p class="mb-4 text-[24px]">未來展望</p>
+          <p>
+            未來，虛擬實境技術將繼續向前發展。我們可以期待更加先進的硬件設備和更加豐富多彩的虛擬內容。同時，介面設計也將繼續演進，以提供更加直觀和便捷的操作方式，進一步增強使用者的沈浸感和參與感。總的來說，虛擬實境技術的未來是充滿希望和潛力的，我們期待著看到它在各個領域中的廣泛應用和發展。
+          </p>
+        </div>
+        <p>2Fish 主筆</p>
+        <!-- 上一頁 -->
+        <div class="flex justify-center lg:justify-start">
+          <button @click="isMainPage = true" class="border px-6 py-3 rounded-lg border-[#3B3B3B] hover-opacity-80">返回文章列表</button>
         </div>
       </div>
     </div>
