@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
     '@nuxtjs/sitemap',
+    'nuxt-swiper',
   ],
   sitemap: {
     // 您的網站根 URL

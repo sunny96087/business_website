@@ -24,6 +24,7 @@
     "@nuxtjs/sitemap": "^5.1.4",
     "axios": "^1.6.8",
     "nuxt": "^3.11.2",
+    "nuxt-swiper": "^1.2.2",
     "type-fest": "^4.16.0",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
