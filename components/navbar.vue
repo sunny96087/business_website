@@ -15,20 +15,26 @@ const toggleMenu = () => {
 
 <template>
   <div class="nav-bg sticky top-0 z-20 border-b border-gray-200 py-5">
-    <div class=" m-auto flex max-w-[1200px] items-center justify-between px-6">
+    <div class="m-auto flex max-w-[1200px] items-center justify-between px-6">
       <nuxtLink to="/" class="paytone-one-regular text-[26px]">2Fish</nuxtLink>
 
-      <div class="items-center justify-center gap-10 hidden lg:flex">
+      <div class="hidden items-center justify-center gap-10 lg:flex">
         <nuxtLink to="/" class="nav-item-pc" exact-active-class="font-medium">首頁</nuxtLink>
-        <nuxtLink to="/portfolio" class="nav-item-pc" exact-active-class="font-medium">作品集</nuxtLink>
-        <nuxtLink to="/services" class="nav-item-pc" exact-active-class="font-medium">服務項目</nuxtLink>
+        <nuxtLink to="/portfolio" class="nav-item-pc" exact-active-class="font-medium"
+          >作品集</nuxtLink
+        >
+        <nuxtLink to="/services" class="nav-item-pc" exact-active-class="font-medium"
+          >服務項目</nuxtLink
+        >
         <nuxtLink to="/blog" class="nav-item-pc" exact-active-class="font-medium">部落格</nuxtLink>
-        <nuxtLink to="/connection" class="nav-item-pc" exact-active-class="font-medium">聯絡我</nuxtLink>
+        <nuxtLink to="/connection" class="nav-item-pc" exact-active-class="font-medium"
+          >聯絡我</nuxtLink
+        >
       </div>
       <div></div>
       <!-- mb menu -->
       <button @click="toggleMenu" class="z-20 lg:hidden">
-        <div class="hamburger" >
+        <div class="hamburger" :class="{ open: menuOpen }">
           <div></div>
           <div></div>
           <div></div>
@@ -37,16 +43,23 @@ const toggleMenu = () => {
     </div>
 
     <transition name="slide">
-      <div v-show="menuOpen" class="fixed inset-0 top-[80px] h-screen z-10 bg-black bg-opacity-20">
+      <div v-show="menuOpen" class="fixed inset-0 top-[80px] z-10 h-screen bg-black bg-opacity-20">
         <div
           class="menu absolute left-0 top-0 flex w-full flex-col items-center bg-white py-6 shadow-lg"
-          
         >
           <nuxtLink to="/" class="nav-item-mb" exact-active-class="bg-slate-100">首頁</nuxtLink>
-          <nuxtLink to="/portfolio" class="nav-item-mb" exact-active-class="bg-slate-100">作品集</nuxtLink>
-          <nuxtLink to="/services" class="nav-item-mb" exact-active-class="bg-slate-100">服務項目</nuxtLink>
-          <nuxtLink to="/blog" class="nav-item-mb" exact-active-class="bg-slate-100">部落格</nuxtLink>
-          <nuxtLink to="/connection" class="nav-item-mb" exact-active-class="bg-slate-100">聯絡我</nuxtLink>
+          <nuxtLink to="/portfolio" class="nav-item-mb" exact-active-class="bg-slate-100"
+            >作品集</nuxtLink
+          >
+          <nuxtLink to="/services" class="nav-item-mb" exact-active-class="bg-slate-100"
+            >服務項目</nuxtLink
+          >
+          <nuxtLink to="/blog" class="nav-item-mb" exact-active-class="bg-slate-100"
+            >部落格</nuxtLink
+          >
+          <nuxtLink to="/connection" class="nav-item-mb" exact-active-class="bg-slate-100"
+            >聯絡我</nuxtLink
+          >
         </div>
       </div>
     </transition>
@@ -54,7 +67,7 @@ const toggleMenu = () => {
 </template>
 
 <style scoped>
-.nav-bg{
+.nav-bg {
   background-color: #ffffffac;
   backdrop-filter: blur(5px);
 }
@@ -112,11 +125,11 @@ const toggleMenu = () => {
   opacity: 1;
 }
 
-.nav-item-pc{
-  @apply leading-[28px] hover:font-medium transform duration-200;
+.nav-item-pc {
+  @apply transform leading-[28px] duration-200 hover:font-medium;
 }
 
-.nav-item-mb{
-  @apply block text-center w-full py-4 text-[20px] hover:bg-slate-100 transform duration-200;
+.nav-item-mb {
+  @apply block w-full transform py-4 text-center text-[20px] duration-200 hover:bg-slate-100;
 }
 </style>
