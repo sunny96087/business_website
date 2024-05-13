@@ -26,6 +26,23 @@ body {
   @apply  hover:opacity-80 transform duration-200;
 }
 
+.b-line{
+  @apply relative z-10;
+}
+.b-line::after {
+  content: '';
+  /* display: block; */
+  background: url('../images/b-line.svg') no-repeat center center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: -16px;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background-size: 100% 100%; /* 設置背景圖片的寬度和高度 */
+}
+
 /* todo 分隔線 */
 
 .custom-select {
@@ -53,6 +70,12 @@ body {
 }
 
 input:focus {
+  outline: none; /* 移除預設的輪廓 */
+  box-shadow: none; /* 移除預設的陰影效果 */
+  /* border-color: inherit; 保持邊框顏色不變 */
+}
+
+textarea:focus {
   outline: none; /* 移除預設的輪廓 */
   box-shadow: none; /* 移除預設的陰影效果 */
   /* border-color: inherit; 保持邊框顏色不變 */

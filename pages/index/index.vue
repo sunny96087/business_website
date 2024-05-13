@@ -104,7 +104,7 @@ onMounted(() => {
       <div class="flex flex-col items-center justify-center px-5 lg:items-start lg:pl-6 lg:pr-0">
         <h2 class="mb-6 text-[32px] text-[#3B3B3B] lg:text-[40px]">Hi！我是 2fish</h2>
         <p class="mb-4 text-[20px] leading-[32px] text-[#5B5B5B]">
-          具有 1 年經驗的前端工程師 & UIUX 設計師，技術雙修並行，熱衷於優化使用者的網頁體驗
+          具有 1 年經驗的<span class="b-line">前端工程師</span> & <span class="b-line">UIUX 設計師</span>，技術雙修並行，熱衷於優化使用者的網頁體驗
         </p>
         <p class="mb-6 leading-[24px] text-[#C1C1C1]">
           WEB DEVELOPMENT / BRANDING / UI / UX / APP DESIGN

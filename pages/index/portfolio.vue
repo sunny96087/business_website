@@ -68,8 +68,8 @@ const portfolioList = ref([
     <div class="flex flex-col items-center md:h-[168px] md:flex-row md:justify-center">
       <Icon name="bxs:quote-alt-left" size="56" class="text-[#E9E9E9] md:self-start"></Icon>
       <div class="text-center text-[20px] text-[#1E1E1E] md:text-[24px]">
-        <p class="mb-2">讓使用者在觀賞與使用的旅程中，發現設計的價值</p>
-        <p>而我在設計與開發的過程中，看見自己的價值</p>
+        <p class="mb-2">讓使用者在觀賞與使用的旅程中，發現<span class="b-line">設計的價值</span></p>
+        <p>而我在設計與開發的過程中，看見<span class="b-line">自己的價值</span></p>
       </div>
       <div class="hidden md:block md:self-end">
         <Icon name="bxs:quote-alt-right" size="56" class="text-[#E9E9E9]"></Icon>
