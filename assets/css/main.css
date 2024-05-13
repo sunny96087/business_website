@@ -40,7 +40,7 @@ body {
   left: 0;
   right: 0;
   z-index: -1;
-  background-size: 100% 100%; /* 設置背景圖片的寬度和高度 */
+  background-size: 100% 8px; /* 設置背景圖片的寬度和高度 */
 }
 
 /* todo 分隔線 */
