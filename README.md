@@ -1,6 +1,12 @@
 # 品牌形象網站
 
-這邊放一段描述
+六角 2024 體驗營，切版任務作業二 - 個人品牌網站 ( LV2 )
+
+## 技術
+> vue3 + nuxt
+> @nuxtjs/tailwindcss
+> vue-router
+> nuxt-swiper
 
 ## 指令
 
