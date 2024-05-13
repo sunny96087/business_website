@@ -2,6 +2,9 @@
 
 六角 2024 體驗營，切版任務作業二 - 個人品牌網站 ( LV2 )
 
+## REPO
+[品牌形象網站 - 2fish](https://business-website-2fishs-projects.vercel.app/)
+
 ## 技術
 > vue3 + nuxt
 > @nuxtjs/tailwindcss
